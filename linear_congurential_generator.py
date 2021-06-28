@@ -28,3 +28,7 @@ with numpy.nditer(ra, op_flags = ["readwrite"]) as rai:
     for i in range(512*512):
         rai[0][...] = lcg.LCG(first_value = first_value)
         rai.iternext()
+        
+cv2.imshow("randomly generated image using LCG", ra)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
